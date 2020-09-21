@@ -22,7 +22,24 @@ To run, type:
 
 The command line will then walk you through a menu to generate the precise data and/or image you'd like.
 
-Data will be saved to a .txt file in the same folder.
+# Data Format
+
+Data will be saved to a .txt file in the same folder as the project. 
+Each circle will be printed on its own line in this format:
+
+`[curvature], [curvature * x-coordinate of center], [curvature * y-coord of center]`
+
+
+Sample data for the People packing (-6 11 14 15):
+
+    -6,   -3,   -4
+    11,   6,   8
+    14,   7,   8
+    15,   6,   10
+
+
+
+
 
 
 
