@@ -27,7 +27,7 @@ The command line will then walk you through a menu to generate the precise data 
 Data will be saved to a .txt file in the same folder as the project. 
 Each circle will be printed on its own line in this format:
 
-`[curvature], [curvature * x-coordinate of center], [curvature * y-coord of center]`
+`[curvature], [curvature * x-coord of center], [curvature * y-coord of center]`
 
 
 Sample data for the People packing (-6 11 14 15):
