@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.util.Objects;
 
 public class LabeledCircle 
 {
@@ -104,11 +105,19 @@ public class LabeledCircle
 	@Override
 	public boolean equals(Object x)
 	{
-		if (x == null) return false;
-		if (this.getClass() != x.getClass()) return false;
-		
+		if (x == null)
+			return false;
+		if (this.getClass() != x.getClass())
+			return false;
+
 		LabeledCircle that = (LabeledCircle) x;
 		return curv == that.curv() && combo.equals(that.combo());
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(combo);
 	}
 	
 }

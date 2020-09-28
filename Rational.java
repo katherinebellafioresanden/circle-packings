@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Objects;
 
 public class Rational implements Comparable<Rational>
 {
@@ -147,11 +149,19 @@ public class Rational implements Comparable<Rational>
 	@Override
 	public boolean equals(Object x)
 	{
-		if (x == null) return false;
-		if (this.getClass() != x.getClass()) return false;
-		
+		if (x == null)
+			return false;
+		if (this.getClass() != x.getClass())
+			return false;
+
 		Rational that = (Rational) x;
 		return num == that.num() && denom == that.denom();
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(num, denom);
 	}
 	
 	public static void main(String[] args)
@@ -171,7 +181,13 @@ public class Rational implements Comparable<Rational>
 		a = a.neg();
 		System.out.println("a is negative? " + a.isNegative());
 		System.out.println("b is positive? " + b.isPositive());
-		System.out.println("0 is negative? " + new Rational(0,1).isNegative());
+		System.out.println("0 is negative? " + new Rational(0, 1).isNegative());
+		
+		HashMap<Rational, Integer> freqs = new HashMap<Rational, Integer>();
+		freqs.put(a, 3);
+		freqs.put(b, 1);
+
+		System.out.println("Is a in the hashmap? " + freqs.containsKey(a));
 
 	}
 	
